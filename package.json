@@ -1,0 +1,39 @@
+{
+  "name": "insurance-multiagent-system",
+  "version": "1.0.0",
+  "description": "Multi-agent modernization, compliance, and governance system for insurance engineering orgs — ByteCode911 Engineering Agent Team",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "tsx agents/index.ts",
+    "upgrade": "tsx agents/upgradeAgent.ts",
+    "compliance": "tsx agents/complianceAgent.ts",
+    "risk": "tsx agents/riskAgent.ts",
+    "security": "tsx agents/securityAgent.ts",
+    "governance": "tsx agents/governanceAgent.ts",
+    "orchestrator": "tsx core/orchestrator.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "pino": "^9.1.0",
+    "redis": "^4.6.14"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "eslint": "^9.4.0",
+    "pino-pretty": "^11.2.1",
+    "prettier": "^3.3.1",
+    "tsx": "^4.15.4",
+    "typescript": "^5.5.2",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^1.6.0"
+  }
+}

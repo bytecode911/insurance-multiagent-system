@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Insurance Multi-Agent System — Architecture</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 2rem; }
+  h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+  p.sub { color: #94a3b8; margin-top: 0; }
+  .bus { background: #1e293b; border: 2px solid #38bdf8; border-radius: 10px; padding: 1rem; text-align: center; margin: 1.5rem 0; font-weight: 600; color: #38bdf8; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
+  .agent { background: #1e293b; border-radius: 8px; padding: 0.75rem; border-left: 4px solid #6366f1; }
+  .agent b { display: block; margin-bottom: 0.25rem; }
+  .agent span { font-size: 0.8rem; color: #94a3b8; }
+  .events { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+  .event { background: #312e81; color: #c7d2fe; border-radius: 999px; padding: 0.25rem 0.75rem; font-size: 0.8rem; }
+</style>
+</head>
+<body>
+  <h1>Insurance Multi-Agent System</h1>
+  <p class="sub">ByteCode911 Engineering Agent Team — event-driven agent orchestration</p>
+
+  <div class="events">
+    <span class="event">pr_opened</span>
+    <span class="event">claim_submitted</span>
+    <span class="event">policy_bound</span>
+    <span class="event">deployment_requested</span>
+    <span class="event">scheduled_scan</span>
+  </div>
+
+  <div class="bus">Event Bus (core/eventBus.ts)</div>
+
+  <div class="grid">
+    <div class="agent"><b>UpgradeAgent</b><span>Framework/runtime version checks</span></div>
+    <div class="agent"><b>CiCdAgent</b><span>Pipeline & rollback health</span></div>
+    <div class="agent"><b>TestingAgent</b><span>Coverage & flaky tests</span></div>
+    <div class="agent"><b>ComplianceAgent</b><span>Regulatory standard checks</span></div>
+    <div class="agent"><b>DocumentationAgent</b><span>README/API doc freshness</span></div>
+    <div class="agent"><b>SecurityAgent</b><span>CVEs, secrets, IAM</span></div>
+    <div class="agent"><b>GovernanceAgent</b><span>Tagging & data governance</span></div>
+    <div class="agent"><b>CostOptimizationAgent</b><span>Idle resources & commitments</span></div>
+    <div class="agent"><b>IntegrationAgent</b><span>Third-party API health</span></div>
+    <div class="agent"><b>StrategyAgent</b><span>Tech debt prioritization</span></div>
+    <div class="agent"><b>RiskAgent</b><span>Underwriting & fraud</span></div>
+    <div class="agent"><b>InnovationAgent</b><span>AI/automation opportunities</span></div>
+  </div>
+</body>
+</html>

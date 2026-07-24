@@ -1,0 +1,19 @@
+name: Security Scan
+on:
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 3 * * *' # nightly, 03:00 UTC
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm audit --audit-level=high
+      - name: Run Security Agent
+        run: npx tsx agents/securityAgent.ts

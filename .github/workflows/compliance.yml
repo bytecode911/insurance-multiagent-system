@@ -1,0 +1,20 @@
+name: Compliance Check
+on:
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1' # weekly, Monday 06:00 UTC
+jobs:
+  compliance-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: Run Compliance Agent
+        run: npx tsx agents/complianceAgent.ts
+        env:
+          COMPLIANCE_STANDARD: ${{ vars.COMPLIANCE_STANDARD || 'irdai' }}
