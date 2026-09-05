@@ -10,7 +10,7 @@ Agents don't call each other directly. They listen on a shared `eventBus` (`core
 | `claim_submitted` | Risk | Fraud/risk scoring on new claims |
 | `policy_bound` | Compliance, Governance | Post-bind regulatory & data-governance checks |
 | `deployment_requested` | Security, CiCd | Prod-readiness gate before deploy |
-| `scheduled_scan` | Upgrade, CostOptimization, Integration, Strategy, Innovation | Periodic org-wide sweep (e.g. nightly/weekly cron) |
+| `scheduled_scan` | Upgrade, CostOptimization, Integration, Strategy, Innovation | Explicitly triggered org-wide sweep |
 
 In local/dev mode, the bus is an in-process `EventEmitter`. For multi-service deployments, replace `core/eventBus.ts` with a Redis or NATS-backed implementation using the same `.emit`/`.on` interface so agent code doesn't change.
 
